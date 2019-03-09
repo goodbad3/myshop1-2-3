@@ -1,0 +1,38 @@
+
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    结算
+{% endblock %}
+
+{% block content %}
+
+    <h1>结算</h1>
+    
+    <div class="order-info">
+        <h3>你的订单</h3>
+        <ul>
+            {% for item in cart %} 
+                <li>{{ item.quantity }}x {{ item.product.name }} <span>${{ item.total_price }}</span></li>
+            {% endfor %}
+        </ul>
+        <p>Total: ￥{{ cart.get_total_price }}</p>
+    </div>
+<form action="." method="post" class="order-form" novalidate>    
+<table>
+<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="50" required id="id_name" /></td></tr>
+
+<tr><th><label for="id_email">Email:</label></th><td><input type="email" name="email" maxlength="254" required id="id_email" /></td></tr>
+
+<tr><th><label for="id_address">Address:</label></th><td><input type="address" name="address" maxlength="254" required id="id_address" /></td></tr>
+</table>
+<p><input type="submit" value="结算"></p>
+        {% csrf_token %}
+    </form>
+
+
+    
+{% endblock %} 
+
+
+

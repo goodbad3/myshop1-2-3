@@ -1,0 +1,42 @@
+
+<html >
+	<head>
+
+ 
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				
+				
+				
+				$("#city_4").citySelect({
+					prov:"湖南", 
+					city:"长沙",
+					dist:"岳麓区",
+					nodata:"none"
+				}); 
+				
+
+			});
+		</script>
+	</head>
+	
+	<body> 
+
+
+
+				<p>三级联动</p>
+				<div id="city_4">
+					<select class="prov"></select> 
+					<select class="city" disabled="disabled"></select>
+					<select class="dist" disabled="disabled"></select>
+				</div>
+
+
+
+			
+
+	</body>
+</html>
